@@ -4,7 +4,7 @@ import style from '../CoolButton.module.css'
 type GreetingPropsType = {
     name: string
     setNameCallback: (e: React.ChangeEvent<HTMLInputElement>) => void
-    addUser:  () => void
+    addUser: () => void
     error: string
     totalUsers: number
 }
