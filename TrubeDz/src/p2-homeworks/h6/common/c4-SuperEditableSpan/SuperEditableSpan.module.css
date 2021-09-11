@@ -1,3 +1,7 @@
 .span {
-    background-color: red ;
+    display: inline-block;
+    height: 31px;
+    padding-top: 10px;
+    cursor: pointer;
+    color: silver;
 }

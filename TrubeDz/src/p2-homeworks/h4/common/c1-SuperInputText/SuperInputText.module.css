@@ -3,9 +3,11 @@
     border: lightcoral solid 2px;
 }
 .superInput {
-    margin:10px;
-    background: yellow;
-    color: chartreuse ;
+    display: inline-block;
+    height: 31px;
+    padding-top: 10px;
+    background: red;
+    color: black ;
 }
 
 .errorInput {
