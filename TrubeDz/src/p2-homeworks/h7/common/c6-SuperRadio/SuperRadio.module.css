@@ -1,0 +1,23 @@
+.radio {
+    appearance: none;
+    height: 10px;
+    width: 10px;
+
+    cursor: pointer;
+    border-radius: 50%;
+    outline: none;
+    background: gold;
+}
+
+.radio:hover {
+    border: 2px solid red;
+}
+readio:checked {
+    background: coral;
+}
+.radio:focus {
+    border: darkmagenta 2px solid;
+}
+.label {
+    cursor: pointer;
+}
