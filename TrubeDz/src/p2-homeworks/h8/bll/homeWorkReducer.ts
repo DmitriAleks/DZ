@@ -1,14 +1,21 @@
 import {UserType} from "../HW8";
 
 export const homeWorkReducer = (state: UserType[], action: AllActionsForSortPeople): UserType[] => {
+    debugger
     switch (action.type) {
-        case 'sort': {
-            // need to fix
-            return state
+
+        case 'sortUp': {
+            const copyState = [...state]
+            const a = copyState.sort((a, b) => a.name > b.name ? 1 : -1)
+            return a
+        }
+        case 'sortDown': {
+            const copyState = [...state]
+            const a = copyState.sort((a, b) => a.name < b.name ? 1 : -1)
+            return a
         }
         case 'check': {
-            // need to fix
-            return state
+            return state.filter(el => el.age > 18)
         }
         default:
             return state
