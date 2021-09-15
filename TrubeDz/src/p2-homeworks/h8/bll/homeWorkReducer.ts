@@ -5,14 +5,10 @@ export const homeWorkReducer = (state: UserType[], action: AllActionsForSortPeop
     switch (action.type) {
 
         case 'sortUp': {
-            const copyState = [...state]
-            const a = copyState.sort((a, b) => a.name > b.name ? 1 : -1)
-            return a
+            return [...state].sort((a, b) => a.name > b.name ? 1 : -1)
         }
         case 'sortDown': {
-            const copyState = [...state]
-            const a = copyState.sort((a, b) => a.name < b.name ? 1 : -1)
-            return a
+            return [...state].sort((a, b) => a.name < b.name ? 1 : -1)
         }
         case 'check': {
             return state.filter(el => el.age > 18)
