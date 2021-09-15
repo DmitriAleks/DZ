@@ -1,6 +1,7 @@
 import React from 'react'
 import {homeWorkReducer} from '../homeWorkReducer'
 import {UserType} from "../../HW8";
+import { homeWorkReducerAlternative } from '../homeWorkReducerAlternative';
 
 let initialState: UserType[]
 
@@ -29,5 +30,10 @@ test('sort name down', () => {
 test('check age 18', () => {
     const newState = homeWorkReducer(initialState, {type: 'check'})
     expect(newState.length).toBe( 4)
+})
+test('sortAlternative name up', () => {
+    const newState = homeWorkReducerAlternative(initialState, {type: 'sort', payload: 'up'})
+    const a = [1,3,4,5,2,0].filter((el,i)=> el === newState[i]._id)
+    expect(a.length).toBe( newState.length)
 
 })
