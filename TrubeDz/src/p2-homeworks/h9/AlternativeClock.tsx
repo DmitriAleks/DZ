@@ -1,7 +1,8 @@
 import React, {useState} from 'react'
-import SuperButton from "../h4/common/c2-SuperButton/SuperButton";
+import SuperButton from '../h4/common/c2-SuperButton/SuperButton'
+import './AlternativeClock.css'
 
-function AlternativeClock() {
+const AlternativeClock = () => {
     const [timerId, setTimerId] = useState<number>(0)
     const [date, setDate] = useState<Date>(new Date())
     const [show, setShow] = useState<boolean>(false)
@@ -10,11 +11,9 @@ function AlternativeClock() {
         clearInterval(timerId)
     }
     const start = () => {
-
         stop()
         const id: number = window.setInterval(() => {
             setDate(new Date())
-            console.log('timeuout')
         }, 1000)
         setTimerId(id)
     }
@@ -26,29 +25,39 @@ function AlternativeClock() {
         setShow(false)
     }
 
-    const stringTime = date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds()
-    const stringDate = date.getDate() + '.' + date.getMonth() + '.' + date.getFullYear()
-    return (
-        <div>
-            <div
-                onMouseEnter={onMouseEnter}
-                onMouseLeave={onMouseLeave}
-            >
-                {stringTime}
-            </div>
 
-            {show && (
+    const secondsStyle = {
+        transform: `rotate(${date.getSeconds() * 6}deg)`
+    };
+    const minutesStyle = {
+        transform: `rotate(${date.getMinutes() * 6}deg)`
+    };
+    const hoursStyle = {
+        transform: `rotate(${date.getHours() * 30}deg)`
+    };
+    const stringDate = date?.toLocaleDateString() || <br/>
+    return (
+
+        <div className={"clock"}
+             onMouseEnter={onMouseEnter}
+             onMouseLeave={onMouseLeave}>
+            <div className={"analog-clock"}>
+                <div className={"dial seconds"} style={secondsStyle}/>
+                <div className={"dial minutes"} style={minutesStyle}/>
+                <div className={"dial hours"} style={hoursStyle}/>
+            </div>
+            {show ? (
                 <div>
                     {stringDate}
                 </div>
+            ): (
+                <br/>
             )}
-
             <SuperButton onClick={start}>start</SuperButton>
             <SuperButton onClick={stop}>stop</SuperButton>
-
         </div>
+
+
     )
 }
-
-
 export default AlternativeClock
