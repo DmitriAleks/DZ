@@ -9,7 +9,7 @@ function HW9() {
             homeworks 9
 
             {/*should work (должно работать)*/}
-            <AlternativeClock/>
+            <Clock/>
 
             <hr/>
             {/*для личного творчества, могу проверить*/}

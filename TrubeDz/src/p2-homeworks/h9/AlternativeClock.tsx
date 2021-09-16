@@ -26,7 +26,6 @@ function AlternativeClock() {
         setShow(false)
     }
 
-
     const stringTime = date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds()
     const stringDate = date.getDate() + '.' + date.getMonth() + '.' + date.getFullYear()
     return (
@@ -50,7 +49,6 @@ function AlternativeClock() {
         </div>
     )
 }
-
 
 
 export default AlternativeClock
