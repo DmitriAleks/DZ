@@ -1,0 +1,12 @@
+.button {
+    cursor:pointer;
+    color: slateblue;
+    background-color: darkgrey;
+    font-size: 15px;
+}
+.buttonDel {
+    color: slateblue;
+    background-color: darkgrey;
+    font-size: 15px;
+
+}
